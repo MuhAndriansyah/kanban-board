@@ -1,0 +1,40 @@
+.board {
+  width: 290px;
+  background-color: #ebecf1;
+  padding: 0.8rem;
+  margin-right: 2.5rem;
+  margin-bottom: 2rem;
+  border-radius: 3px;
+  height: 100%;
+
+  &__title {
+    display: flex;
+    height: auto;
+    justify-content: space-between;
+    align-items: center;
+
+    h3 {
+      max-width: 250px;
+      font-size: 16px;
+      line-height: 20px;
+      text-align: left;
+      font-weight: bold;
+    }
+
+    input {
+      font-size: 16px;
+      padding: 0.2rem 0rem;
+
+      &:focus {
+        padding-left: 0.3rem;
+      }
+    }
+
+    img {
+      width: 18px;
+      cursor: pointer;
+      align-self: flex-start;
+      padding-top: 5px;
+    }
+  }
+}

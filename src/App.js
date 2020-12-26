@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./assets/scss/App.scss";
+import Board from "./components/Board";
+import Button from "./components/Button";
+import Header from "./components/Header";
+import { DataContext } from "./context/DataProvider";
 
 function App() {
+  const { store } = React.useContext(DataContext);
+  console.log(store);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header />
+
+      <div className="container">
+        {store.listIds.map((listsIds, index) => {
+          const data = store.lists[listsIds];
+          return <Board data={data} key={data.id} />;
+        })}
+        <Button list />
+      </div>
     </div>
   );
 }

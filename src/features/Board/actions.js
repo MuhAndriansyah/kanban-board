@@ -5,12 +5,15 @@ import {
   EDIT_TITLE_CARD,
   DELETE_CARD,
   ADD_CARD,
+  UPDATE_DRAG,
+  UPDATE_BOARD,
+  UPDATE_DRAG_BOARD,
 } from "./constants";
 
-export const editTitleBoard = (listId, title) => {
+export const editTitleBoard = (id, title) => {
   return {
     type: EDIT_TITLE_BOARD,
-    listId,
+    id,
     title,
   };
 };
@@ -51,5 +54,26 @@ export const addCard = (listId, title) => {
     type: ADD_CARD,
     listId,
     title,
+  };
+};
+
+export const updateDrag = (newList) => {
+  return {
+    type: UPDATE_DRAG,
+    newList,
+  };
+};
+
+export const updateBoard = (newListSwap) => {
+  return {
+    type: UPDATE_BOARD,
+    newListSwap,
+  };
+};
+
+export const updateDragBoard = (board) => {
+  return {
+    type: UPDATE_DRAG_BOARD,
+    board,
   };
 };

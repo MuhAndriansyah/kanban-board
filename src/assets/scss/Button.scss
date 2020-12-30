@@ -1,3 +1,44 @@
+.form-board {
+  height: 8rem;
+  background: #ebecf1;
+  width: 16rem;
+  padding: 1rem 1rem;
+  .text-area {
+    width: 100%;
+    border: none;
+    resize: none;
+    padding: 1rem;
+    margin-bottom: 0.3rem;
+    border-radius: 3px;
+    font-size: 1.2rem;
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .btn-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+    button {
+      padding: 0.5rem 2rem;
+      cursor: pointer;
+      font-weight: bold;
+      border-radius: 3px;
+      border: none;
+      color: #fff;
+
+      &.add {
+        background-color: green;
+      }
+
+      &.close {
+        background-color: salmon;
+      }
+    }
+  }
+}
+
 .add-btn {
   margin-top: 1rem;
   width: 8rem;

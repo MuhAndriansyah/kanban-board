@@ -1,12 +1,11 @@
 import { v4 as uuidv4 } from "uuid";
 import {
   EDIT_TITLE_BOARD,
-  DELETE_BOARD,
   ADD_BOARD,
   EDIT_TITLE_CARD,
   DELETE_CARD,
   ADD_CARD,
-  UPDATE_DRAG,
+  UPDATE_DRAG_CARD,
   UPDATE_BOARD,
   UPDATE_DRAG_BOARD,
 } from "./constants";
@@ -82,7 +81,7 @@ const reducer = (state, action) => {
         lists: [...state.lists, newBoard],
       };
 
-    case UPDATE_DRAG:
+    case UPDATE_DRAG_CARD:
       return {
         ...state,
         lists: state.lists.map((board) => ({

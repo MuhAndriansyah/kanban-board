@@ -7,7 +7,7 @@ import Header from "./components/Header";
 import { useDataContext } from "./context/DataProvider";
 import {
   updateBoard,
-  updateDrag,
+  updateDragCard,
   updateDragBoard,
 } from "./features/Board/actions";
 function App() {
@@ -26,8 +26,6 @@ function App() {
         const [removed] = lists.splice(sourceIndex, 1);
         lists.splice(destinationIndex, 0, removed);
 
-        console.log(lists);
-
         dispatch(updateDragBoard(lists));
       }
 
@@ -43,15 +41,13 @@ function App() {
         (card) => card.id === draggableId,
       );
 
-      console.log("Card Drag", draggingCard);
-
       if (sourceList === destinationList) {
         sourceList?.cards.splice(source.index, 1);
         destinationList?.cards.splice(destination.index, 0, draggingCard);
 
         const newCard = destinationList;
         const listId = destinationList?.id;
-        dispatch(updateDrag(listId, newCard));
+        dispatch(updateDragCard(listId, newCard));
       } else {
         sourceList?.cards.splice(source.index, 1);
         destinationList?.cards.splice(destination.index, 0, draggingCard);
